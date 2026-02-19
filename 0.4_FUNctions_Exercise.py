@@ -1,6 +1,6 @@
 """
-author: 
-date: 
+author: Vadyn794
+date: 2026/02/15
 0.4 - Functions Review Exercises
 """
 import math
@@ -16,15 +16,18 @@ def sum_cubes(n):
 
     """
     # TODO: Write your code here
-
-
+    total = 0
+    for i in range(1, n+1):
+        total = total + i**3
+    print(total)
 
 # Test cases for sum_cubes
 sum_cubes(0)    # Expected: 0
 sum_cubes(1)    # Expected: 1
 sum_cubes(5)    # Expected: 225
 sum_cubes(10)   # Expected: 3025
-sum_cubes(50)   # Expected: 1625625
+sum_cubes(50)   # Expected: 1625625 
+
 
 # Exercise 2: 
 def volume_sphere(r):
@@ -38,7 +41,8 @@ def volume_sphere(r):
     """
     # TODO: Write your code here
 
-
+    volume = (3/4) * math.pi * (r**3)
+    return volume
 
 def area_sphere(r):
     """
@@ -50,6 +54,8 @@ def area_sphere(r):
     float: Surface area of the sphere.
     """
     # TODO: Write your code here
+    area = 4 * math.pi * (r**2)
+    return area
 
 # Test Cases for volume_sphere and area_sphere
 radii = [0, 1, 4, 10.4, 100.344]
@@ -77,7 +83,7 @@ def swap(a, b):
     Returns:
     tuple: A tuple containing the values in reversed order (b, a).
     """
-
+    return b, a
 
 # Test cases for swap
 x, y = swap(3, 5)
@@ -97,7 +103,15 @@ def approximate_pi(n):
 
         Returns (float): Approximated value of pi.
         """
+    total = 0
+    sign = 1  
 
+    for i in range(n):
+        denominator = 2 * i + 1
+        total += sign * (4 / denominator)
+        sign *= -1 
+
+    return total
 
 # Test cases for approximate_pi
 print(approximate_pi(3))     # Expected: 3.466666666666667
